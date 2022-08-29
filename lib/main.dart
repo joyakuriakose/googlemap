@@ -57,3 +57,26 @@ class MapSampleState extends State<MapSample> {
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }
+
+//google developer console
+// console.developers.google.com
+//select project= new project
+//name= create.
+//===================
+//navigation drawer >> api nd services >> enabled api nd services >>
+// android, ios >> enable
+// ============
+//nav drawwer >> credentials >> create cred >> api key >>
+//api key1 >> click
+//belowww>> restrict key >> select api >> map sdk android >> ios >>
+// save >> show key >> copy
+//pub dev >> google map flutter >> add yaml file.
+// our project
+//=====================
+//code
+// android >> app >> buildgradle >> minsdkversion 20(line 39)
+// ================
+//android >> app >> src >> main >> manifest >> metadata -copty>paste >> key paste
+//==================
+//android >> build gradle >> dependencies-inside
+//3rd line --  classpath com.google.gms: google-services: 4.3.13
