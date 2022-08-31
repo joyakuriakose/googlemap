@@ -21,12 +21,53 @@ class MapSample extends StatefulWidget {
 }
 
 class MapSampleState extends State<MapSample> {
+
+// Set<Marker> _markers = {};
+// void _onMapCreated(GoogleMapController controller) {
+//   setState(() {
+//     _markers.add(Marker(
+//         markerId: MarkerId('id-1'),
+//     position: LatLng(37.42796133580664, -122.085749655962),
+//     ));
+//   }
+//   );
+// }
+
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
+
+  /////////
+ /// List<Marker> _marker = [];
+  /// List<Marker> _list = const[
+  /// Marker(
+  /// markerId: MarkerId('1')
+  /// position: LatLng(43.8756347865, -23.45353454354),
+  /// infoWindow: InfoWindow(
+  /// title: "My current location"
+  /// )
+  /// )
+  ///
+  /// Marker(
+  //   /// markerId: MarkerId('1')
+  //   /// position: LatLng(43.8756347865, -23.45353454354),
+  //   /// infoWindow: InfoWindow(
+  //   /// title: "My current location"
+  //   /// )
+  //   /// )
+  ///
+  /// ]
+  ///
+  ///
+  /// @override
+  /// void initState() {
+  /// super.initState();
+  /// _marker.addAll(_list);
+  /////////////
+
 
   static final CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
@@ -36,10 +77,11 @@ class MapSampleState extends State<MapSample> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       body: GoogleMap(
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
+        /// markers: Set<Marker>.of(_marker) ,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
@@ -68,7 +110,7 @@ class MapSampleState extends State<MapSample> {
 // ============
 //nav drawwer >> credentials >> create cred >> api key >>
 //api key1 >> click
-//belowww>> restrict key >> select api >> map sdk android >> ios >>
+//below>> restrict key >> select api >> map sdk android >> ios >>
 // save >> show key >> copy
 //pub dev >> google map flutter >> add yaml file.
 // our project
